@@ -14,7 +14,7 @@ import { login } from 'action/session';
 // Import components.
 // =============================================================================
 import FormInput from 'component/base/form-input';
-import { LabelInputField } from 'react-semantic-redux-form';
+import { LabelInputField } from 'component/util/semantic-form/label-input-field';
 import {
   Button,
   Form,

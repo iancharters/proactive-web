@@ -28,7 +28,6 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'bundle.css',
       allChunks: true,
-      disable: true,
     }),
   ],
 
@@ -71,7 +70,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[path][name].[ext]',
+            name: 'asset/image/[name].[ext]',
           },
         },
       },

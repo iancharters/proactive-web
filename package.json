@@ -10,7 +10,7 @@
   },
   "scripts": {
     "clean": "rimraf build/*",
-    "build": "webpack --config ./config/webpack/webpack.prod.js",
+    "build": "npm run clean && webpack --config ./config/webpack/webpack.prod.js",
     "dev": "webpack-dev-server --config ./config/webpack/webpack.dev.js --hot",
     "dev:dashboard": "webpack-dashboard -- webpack-dev-server --config ./config/webpack/webpack.dev.js --hot",
     "lint": "eslint ."
