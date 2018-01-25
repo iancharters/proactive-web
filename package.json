@@ -1,12 +1,12 @@
 {
-  "name": "proactive-react-auth",
+  "name": "proactive-web",
   "version": "0.1.0",
   "author": "Ian Charters <ian@proactivealarms.com>",
   "description": "A boilerplate React project with Guardian authentication.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iancharters/proactive-react-auth.git"
+    "url": "git+https://github.com/iancharters/proactive-web.git"
   },
   "scripts": {
     "clean": "rimraf build/*",
