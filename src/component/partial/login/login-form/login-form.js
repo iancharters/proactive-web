@@ -1,20 +1,20 @@
 // =============================================================================
 // Import modules.
 // =============================================================================
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Field, reduxForm} from 'redux-form';
+import {Link} from 'react-router-dom';
 
 // =============================================================================
 // Import actions.
 // =============================================================================
-import { login } from 'action/session';
+import {login} from 'action/session';
 
 // =============================================================================
 // Import components.
 // =============================================================================
 import FormInput from 'component/base/form-input';
-import { LabelInputField } from 'component/util/semantic-form/label-input-field';
+import LabelInputField  from 'component/util/label-input-field';
 import {
   Button,
   Form,
@@ -36,52 +36,50 @@ import style from '../login.scss';
 // =============================================================================
 import Logo from 'asset/image/logo.png';
 
-const LoginForm = ({ handleSubmit, submitting }) => {
+const LoginForm = ({handleSubmit, submitting}) => {
   const submit = (data, dispatch) => dispatch(login(data));
 
   return (
-    <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="teal" textAlign="center">
+    <Grid textAlign='center' style={{height: '100%'}} verticalAlign='middle'>
+      <Grid.Column style={{maxWidth: 450}}>
+        <Header as='h2' color='teal' textAlign='center'>
           <Image src={Logo} /> Proactive
         </Header>
-        <Form size="large" onSubmit={handleSubmit(submit)}>
+        <Form size='large' onSubmit={handleSubmit(submit)}>
           <Segment stacked>
             <Field
-              name="email"
+              name='email'
+              placeholder='Username'
               component={LabelInputField}
-              label={{
-                content: <Icon color="teal" name="user" size="large" />,
-              }}
-              labelPosition="left"
-              placeholder="Username"
+              fluid
+              icon='lock'
+              iconPosition='left'
             />
 
             <Field
-              name="password"
+              name='password'
+              type='password'
+              placeholder='Password'
               component={LabelInputField}
-              type="password"
-              label={{
-                content: <Icon color="teal" name="lock" size="large" />,
-              }}
-              labelPosition="left"
-              placeholder="Password"
+              fluid
+              icon='lock'
+              iconPosition='left'
             />
 
-            <Button color="teal" fluid size="large">
+            <Button color='teal' fluid size='large'>
               {submitting ? 'Logging in...' : 'Login'}
             </Button>
           </Segment>
         </Form>
         <Message>
-          <Link to="/signup">Create a new account</Link>
+          <Link to='/signup'>Create a new account</Link>
         </Message>
       </Grid.Column>
     </Grid>
   );
 };
 
-const validate = values => {
+const validate = (values) => {
   const errors = {};
   const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 

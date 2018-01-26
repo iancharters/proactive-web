@@ -2,13 +2,13 @@
 // Import modules.
 // =============================================================================
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
+import {Field, reduxForm} from 'redux-form';
+import {Link} from 'react-router-dom';
 
 // =============================================================================
 // Import bases.
 // =============================================================================
-import { LabelInputField } from 'component/util/semantic-form/label-input-field';
+import LabelInputField from 'component/util/label-input-field';
 import {
   Button,
   Form,
@@ -23,54 +23,54 @@ import {
 // =============================================================================
 // Import actions.
 // =============================================================================
-import { signup } from 'action/session';
+import {signup} from 'action/session';
 
-const SignupForm = ({ handleSubmit, submitting }) => {
+const SignupForm = ({handleSubmit, submitting}) => {
   const submit = (data, dispatch) => dispatch(signup(data));
 
   return (
-    <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="teal" textAlign="center">
+    <Grid textAlign='center' style={{height: '100%'}} verticalAlign='middle'>
+      <Grid.Column style={{maxWidth: 450}}>
+        <Header as='h2' color='teal' textAlign='center'>
           Register a New User
         </Header>
-        <Form size="large" onSubmit={handleSubmit(submit)}>
+        <Form size='large' onSubmit={handleSubmit(submit)}>
           <Segment stacked>
-            <Field name="name" component={LabelInputField} placeholder="Name" />
+            <Field name='name' component={LabelInputField} placeholder='Name' />
 
             <Field
-              name="username"
+              name='username'
               component={LabelInputField}
-              placeholder="Username"
+              placeholder='Username'
             />
 
             <Field
-              name="email"
+              name='email'
               component={LabelInputField}
-              placeholder="Email"
+              placeholder='Email'
             />
 
             <Field
-              name="password"
+              name='password'
               component={LabelInputField}
-              type="password"
-              placeholder="Password"
+              type='password'
+              placeholder='Password'
             />
 
-            <Button color="teal" fluid size="large">
+            <Button color='teal' fluid size='large'>
               {submitting ? 'Registering...' : 'Signup'}
             </Button>
           </Segment>
         </Form>
         <Message>
-          <Link to="/login">Login to Existing Account</Link>
+          <Link to='/login'>Login to Existing Account</Link>
         </Message>
       </Grid.Column>
     </Grid>
   );
 };
 
-const validate = values => {
+const validate = (values) => {
   const errors = {};
   const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 

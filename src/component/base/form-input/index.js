@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 export default class Input extends Component {
   render() {
@@ -10,15 +10,15 @@ export default class Input extends Component {
     } = this.props;
 
     return (
-      <div className="input">
+      <div className='input'>
         <input
           {...input}
           type={type}
           placeholder={placeholder}
-          className="form-control"
+          className='form-control'
         />
         {meta.touched && meta.error &&
-          <div className="validation-error">{meta.error}</div>
+          <div className='validation-error'>{meta.error}</div>
         }
       </div>
     );

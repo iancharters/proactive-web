@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import NotificationSystem from 'react-notification-system';
 
@@ -11,7 +11,7 @@ export class ErrorMessage extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { errors } = prevProps;
+    const {errors} = prevProps;
 
     for (let i = 0; i < this.props.errors.length; i += 1) {
       if (errors[i] !== this.props.errors[i] && this.props.errors[i]) {
@@ -20,7 +20,6 @@ export class ErrorMessage extends Component {
     }
   }
 
-
   addNotification(message) {
     this.notificationSystem.addNotification({
       message,
@@ -28,14 +27,14 @@ export class ErrorMessage extends Component {
     });
   }
 
-
   render() {
     return (
-      <div className="errorMessage">
-        <NotificationSystem ref={(n) => {
-          this.notificationSystem = n;
-          return n;
-        }}
+      <div className='errorMessage'>
+        <NotificationSystem
+          ref={(n) => {
+            this.notificationSystem = n;
+            return n;
+          }}
         />
       </div>
     );
@@ -50,7 +49,7 @@ ErrorMessage.defaultProps = {
   errors: [],
 };
 
-const mapStateProps = state => ({
+const mapStateProps = (state) => ({
   errors: state.errors.errors,
 });
 

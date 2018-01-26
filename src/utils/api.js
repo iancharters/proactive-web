@@ -5,8 +5,6 @@ import { API } from 'config/url.config';
 function headers() {
   const token = localStorage.getItem('token');
 
-  // axios.defaults.withCredentials = true;
-
   return {
     Accept: 'application/json',
     'Content-Type': 'application/json',

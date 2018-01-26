@@ -4,7 +4,7 @@
 // =============================================================================
 import React from 'react';
 import {render} from 'react-dom';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 
 // =============================================================================
 // Import store
@@ -19,7 +19,7 @@ import Root from 'component/root';
 // =============================================================================
 // Import css
 // =============================================================================
-//import 'reset-css';
+// import 'reset-css';
 import './global.scss';
 
 render(

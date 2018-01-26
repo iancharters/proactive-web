@@ -1,15 +1,15 @@
 // =============================================================================
 // Import modules.
 // =============================================================================
-import { combineReducers } from 'redux';
-import { reducer as form } from 'redux-form';
+import {combineReducers} from 'redux';
+import {reducer as form} from 'redux-form';
 
 // =============================================================================
 // Import reducers.
 // =============================================================================
 import session from 'reducer/session';
 import errors from 'reducer/errors';
-import { sessionTypes } from 'action/constant';
+import {sessionTypes} from 'action/constant';
 
 const appReducer = combineReducers({
   form,

@@ -6,13 +6,13 @@ import React from 'react';
 // =============================================================================
 // Import components.
 // =============================================================================
-import { Container, Header } from 'semantic-ui-react';
+import {Container, Header} from 'semantic-ui-react';
 
 const Home = () => {
   return (
     <div>
       <Container text>
-        <Header as="h1">Semantic UI React Fixed Template</Header>
+        <Header as='h1'>Semantic UI React Fixed Template</Header>
         <p>This is a basic fixed menu template using fixed size containers.</p>
         <p>
           A text container is used for the main container, which is useful for

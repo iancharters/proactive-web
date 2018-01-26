@@ -1,19 +1,19 @@
 // =============================================================================
 // Import modules.
 // =============================================================================
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // =============================================================================
 // Import actions
 // =============================================================================
-import { authenticate, unauthenticate, logout } from 'action/session';
+import {authenticate, unauthenticate, logout} from 'action/session';
 
 // =============================================================================
 // Import bases.
 // =============================================================================
-import { Grid } from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 
 // =============================================================================
 // Import partials.
@@ -43,7 +43,7 @@ class Root extends Component {
   }
 
   render() {
-    const { isAuthenticated, willAuthenticate } = this.props;
+    const {isAuthenticated, willAuthenticate} = this.props;
 
     const authProps = {
       isAuthenticated,
@@ -51,7 +51,7 @@ class Root extends Component {
     };
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{width: '100%'}}>
         {isAuthenticated ? (
           <Header
             isAuthenticated={isAuthenticated}
@@ -63,17 +63,17 @@ class Root extends Component {
           <Switch>
             <MatchAuthenticated
               exact
-              path="/"
+              path='/'
               component={Home}
               {...authProps}
             />
             <RedirectAuthenticated
-              path="/signup"
+              path='/signup'
               component={Signup}
               {...authProps}
             />
             <RedirectAuthenticated
-              path="/login"
+              path='/login'
               component={Login}
               {...authProps}
             />
@@ -88,14 +88,14 @@ class Root extends Component {
 
 Root.displayName = 'Root';
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   dispatch,
   authenticate: () => dispatch(authenticate()),
   unauthenticate: () => dispatch(unauthenticate()),
   logout: () => dispatch(logout()),
 });
 
-const mapStateProps = state => ({
+const mapStateProps = (state) => ({
   isAuthenticated: state.session.isAuthenticated,
   willAuthenticate: state.session.willAuthenticate,
   currentUser: state.session.currentUser,

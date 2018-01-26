@@ -3,11 +3,11 @@
 // =============================================================================
 import React from 'react';
 
-const Content = ({ component, props }) => {
+const Content = ({component, props}) => {
   const Component = component;
 
   return (
-    <div style={{ marginTop: '7em' }}>
+    <div style={{marginTop: '7em'}}>
       <Component {...props} />
     </div>
   );

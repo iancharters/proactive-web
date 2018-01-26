@@ -2,12 +2,12 @@
 // Import modules.
 // =============================================================================
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 // =============================================================================
 // Import actions.
 // =============================================================================
-import { logout } from 'action/session';
+import {logout} from 'action/session';
 
 // =============================================================================
 // Import styles.
@@ -21,22 +21,22 @@ import Logo from 'asset/image/logo.png';
 // =============================================================================
 // Import bases.
 // =============================================================================
-import { Container, Grid, Image, Menu } from 'semantic-ui-react';
+import {Container, Grid, Image, Menu} from 'semantic-ui-react';
 
-const Header = ({ currentUser, logout }) => {
+const Header = ({currentUser, logout}) => {
   return (
-    <Menu fixed="top" inverted>
+    <Menu fixed='top' inverted>
       <Container>
-        <Menu.Item as="a" header>
-          <Image size="mini" src={Logo} style={{ marginRight: '1.5em' }} />
+        <Menu.Item as='a' header>
+          <Image size='mini' src={Logo} style={{marginRight: '1.5em'}} />
           Proactive
         </Menu.Item>
-        <Menu.Item as="a">Top</Menu.Item>
-        <Menu.Item as="a">Section 1</Menu.Item>
-        <Menu.Item as="a">Section 2</Menu.Item>
-        <Menu.Menu position="right">
+        <Menu.Item as='a'>Top</Menu.Item>
+        <Menu.Item as='a'>Section 1</Menu.Item>
+        <Menu.Item as='a'>Section 2</Menu.Item>
+        <Menu.Menu position='right'>
           <Menu.Item>Welcome, {currentUser.username}.</Menu.Item>
-          <Menu.Item as="a" onClick={logout}>
+          <Menu.Item as='a' onClick={logout}>
             Logout
           </Menu.Item>
         </Menu.Menu>

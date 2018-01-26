@@ -1,1 +1,1 @@
-export { default } from './match-authenticated';
+export {default} from './match-authenticated';

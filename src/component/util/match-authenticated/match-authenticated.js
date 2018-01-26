@@ -2,7 +2,7 @@
 // Import modules.
 // =============================================================================
 import React from 'react';
-import { Route, Redirect } from 'react-router';
+import {Route, Redirect} from 'react-router';
 
 // =============================================================================
 // Import utility components.
@@ -22,7 +22,7 @@ const MatchAuthenticated = ({
     <Route
       exact={exact}
       path={path}
-      render={props => {
+      render={(props) => {
         if (isAuthenticated) {
           return <Content component={component} props={props} />;
         }
@@ -30,7 +30,7 @@ const MatchAuthenticated = ({
           return null;
         }
         if (!willAuthenticate && !isAuthenticated) {
-          return <Redirect to={{ pathname: '/login' }} />;
+          return <Redirect to={{pathname: '/login'}} />;
         }
         return null;
       }}

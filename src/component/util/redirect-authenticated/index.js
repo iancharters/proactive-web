@@ -1,1 +1,1 @@
-export { default } from './redirect-authenticated';
+export {default} from './redirect-authenticated';
